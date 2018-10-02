@@ -2,15 +2,15 @@ package main
 
 import (
 	"fmt"
+	"time"
 	"io/ioutil"
 	"math/rand"
 	"net/http"
 )
 
 func main() {
-	// Choose a random URL under the ".bar" subdomain
+	rand.Seed(time.Now().UnixNano())
 	url := fmt.Sprintf("http://foo-%d.bar:8080", rand.Intn(100))
-	//url := "http://foo.bar:8080"
 
 	resp, err := http.Get(url)
 	if err != nil {

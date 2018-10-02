@@ -8,7 +8,7 @@ import (
 	"github.com/miekg/dns"
 )
 
-const wildcardHostsFilename = "example/hosts"
+const wildcardHostsFilename = "hosts"
 
 func main() {
 	dns.HandleFunc(".", handler)
